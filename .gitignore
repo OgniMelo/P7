@@ -1,0 +1,17 @@
+**.htaccess
+/css
+/img
+/js
+/favicon.*
+/index.html
+/back/.env
+/back/access.log
+/back/cert
+/back/media/pfp/*
+/back/media/post/*
+/back/node_modules
+/back/package-lock.json
+/front/.env
+/front/dist
+/front/node_modules
+/front/package-lock.json
