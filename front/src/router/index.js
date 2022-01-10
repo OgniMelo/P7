@@ -11,10 +11,16 @@ import PostCreation from '../views/PostCreation.vue'
 import Post from '../views/Post.vue'
 import Leaderboard from '../views/Leaderboard.vue'
 import Snake from '../views/Snake.vue'
+import PageNotFound from '../views/404.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '*',
+    name: 'PageNotFound',
+    component: PageNotFound
+  },
   {
     path: '/',
     name: 'Home',
