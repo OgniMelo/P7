@@ -109,6 +109,7 @@ export default {
     margin: 5px
     padding: 5px
     text-align: left
+    overflow-wrap: anywhere
     border-left: 1px solid grey
   &__delete__button
     cursor: pointer
