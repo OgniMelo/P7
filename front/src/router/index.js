@@ -17,7 +17,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '*',
+    path: '/notFound',
     name: 'PageNotFound',
     component: PageNotFound
   },
@@ -107,6 +107,8 @@ router.beforeEach(async (to, from, next) => {
   store.commit('SET_SEARCH', '')
   if (!store.state.isLoggedIn)
     await autoLogin()
+  if (!to.matched.length)
+    return next({ name: 'PageNotFound' })
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!store.state.isLoggedIn) {
       next({ name: 'Login' })
