@@ -102,6 +102,9 @@ export default {
       if (!this.isPasswordValid) {
         return this.errorMessage = 'New password is not strong enough.'
       }
+      if (this.password !== this.passwordConfirmation) {
+        return this.errorMessage = 'Passwords must match.'
+      }
       const requestSettings = {
         method: 'PATCH',
         headers: {
