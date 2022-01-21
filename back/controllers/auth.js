@@ -208,7 +208,7 @@ exports.requestPasswordReset = async (req, res, next) => {
       expires: Date.now() + 1000 * 60 * 5
     })
     await token.save()
-    const link = `${process.env.REQ_HOST}/OpenClassrooms/p7/passwordReset?token=${resetToken}&id=${user.userid}`
+    const link = `${req.protocol}://${req.get('host')}/passwordReset?token=${resetToken}&id=${user.userid}`
     const payload = `<p>Bonjour ${user.firstName},</p>
     <p>Vous avez fait une demande pour réinitialiser votre mot de passe Groupomania.</p>
     <p>Merci de cliquer sur le lien ci-dessous pour procéder au changement du mot de passe.</p>
